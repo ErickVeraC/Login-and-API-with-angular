@@ -5,8 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
 
-// Rutas de la aplicación
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
@@ -17,4 +17,5 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
   },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'profile', component: ProfileComponent },
 ];

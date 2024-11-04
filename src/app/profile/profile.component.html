@@ -1,1 +1,27 @@
-<p>profile works!</p>
+<div class="container pt-6">
+  <div class="card">
+    <div class="card-image has-text-centered mt-4">
+      <figure class="image is-128x128 is-inline-block">
+        <img
+          [src]="profile.image"
+          alt="Imagen de {{ profile.name }}"
+          class="is-rounded"
+        />
+      </figure>
+    </div>
+
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content has-text-centered">
+          <p class="title is-4">{{ profile.name }}</p>
+          <p class="subtitle is-6">{{ profile.age }} años</p>
+        </div>
+      </div>
+
+      <!-- Información adicional del perfil -->
+      <div class="content has-text-centered">
+        <p>Fan de Rick and Morty desde hace {{ profile.yearsAsFan }} años</p>
+      </div>
+    </div>
+  </div>
+</div>

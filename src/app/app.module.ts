@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common'; // Asegúrate de importar CommonModule
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
