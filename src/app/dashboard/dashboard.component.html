@@ -1,1 +1,122 @@
 <p>dashboard works!</p>
+<div class="container mt-5">
+  <!-- Encabezado del Dashboard -->
+  <section class="hero is-dark">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">Rick and Morty Dashboard</h1>
+        <h2 class="subtitle">Información del universo Rick and Morty</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de KPIs -->
+  <section class="section">
+    <div class="columns">
+      <!-- KPI de Personajes -->
+      <div class="column">
+        <div class="box has-background-primary has-text-white">
+          <h3 class="title is-4">Total de Personajes</h3>
+          <p class="subtitle is-3">{{ totalCharacters }}</p>
+        </div>
+      </div>
+      <!-- KPI de Episodios -->
+      <div class="column">
+        <div class="box has-background-link has-text-white">
+          <h3 class="title is-4">Total de Episodios</h3>
+          <p class="subtitle is-3">{{ totalEpisodes }}</p>
+        </div>
+      </div>
+      <!-- KPI de Ubicaciones -->
+      <div class="column">
+        <div class="box has-background-info has-text-white">
+          <h3 class="title is-4">Total de Ubicaciones</h3>
+          <p class="subtitle is-3">{{ totalLocations }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Listado de Personajes -->
+  <section class="section">
+    <h2 class="title is-3">Personajes</h2>
+    <div class="table-container">
+      <table class="table is-striped is-fullwidth">
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Especie</th>
+            <th>Estatus</th>
+            <th>Ubicación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let character of characters">
+            <td>
+              <img
+                [src]="character.image"
+                alt="Imagen de {{ character.name }}"
+                width="50"
+              />
+            </td>
+            <td>{{ character.name }}</td>
+            <td>{{ character.species }}</td>
+            <td>{{ character.status }}</td>
+            <td>{{ character.location.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Listado de Episodios -->
+  <section class="section">
+    <h2 class="title is-3">Episodios</h2>
+    <div class="table-container">
+      <table class="table is-striped is-fullwidth">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Título</th>
+            <th>Fecha de Emisión</th>
+            <th>Personajes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let episode of episodes">
+            <td>{{ episode.id }}</td>
+            <td>{{ episode.name }}</td>
+            <td>{{ episode.air_date }}</td>
+            <td>{{ episode.characters.length }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Listado de Ubicaciones -->
+  <section class="section">
+    <h2 class="title is-3">Ubicaciones</h2>
+    <div class="table-container">
+      <table class="table is-striped is-fullwidth">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Dimensión</th>
+            <th>Residentes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let location of locations">
+            <td>{{ location.name }}</td>
+            <td>{{ location.type }}</td>
+            <td>{{ location.dimension }}</td>
+            <td>{{ location.residents.length }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
