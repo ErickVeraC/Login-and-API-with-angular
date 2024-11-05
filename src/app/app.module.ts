@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   {
     path: 'detailPage/:id',
     component: DetailPageComponent,

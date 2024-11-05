@@ -1,1 +1,42 @@
-<p>login works!</p>
+<main class="columns is-centered is-vcentered">
+  <div class="column is-8 has-text-centered">
+    <h2 class="title is-2">Iniciar sesión</h2>
+    <p>Dejanos saber que version y de que dimension eres!</p>
+    <section class="section">
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input
+            class="input"
+            type="email"
+            placeholder="e.g. alexsmith@gmail.com"
+            #emailInput
+          />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input
+            class="input"
+            type="password"
+            placeholder="********"
+            #passwordInput
+          />
+        </div>
+      </div>
+
+      <button
+        class="button is-dark is-centered"
+        (click)="onLogin(emailInput.value, passwordInput.value)"
+      >
+        Login
+      </button>
+
+      <div *ngIf="errorMessage" class="notification is-danger">
+        {{ errorMessage }}
+      </div>
+    </section>
+  </div>
+</main>

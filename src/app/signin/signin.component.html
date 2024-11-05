@@ -1,20 +1,59 @@
-<div class="field">
-  <label class="label">Name</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="e.g Alex Smith" />
-  </div>
-</div>
+<main class="columns is-centered is-vcentered">
+  <div class="column is-8 has-text-centered">
+    <h2 class="title is-2">Crea una cuenta</h2>
+    <p>
+      Sabemos que eres un fan de Rick and Morty, por lo tanto dejanos saber
+      quien eres!
+    </p>
+    <section class="section">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="e.g Alex Smith"
+            #nameInput
+          />
+        </div>
+      </div>
 
-<div class="field">
-  <label class="label">Email</label>
-  <div class="control">
-    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com" />
-  </div>
-</div>
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input
+            class="input"
+            type="email"
+            placeholder="e.g. alexsmith@gmail.com"
+            #emailInput
+          />
+        </div>
+      </div>
 
-<div class="field">
-  <label class="label">Password</label>
-  <div class="control">
-    <input class="input" type="password" placeholder="********" />
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input
+            class="input"
+            type="password"
+            placeholder="********"
+            #passwordInput
+          />
+        </div>
+      </div>
+
+      <button
+        class="button is-dark is-centered"
+        (click)="
+          onSignIn(nameInput.value, emailInput.value, passwordInput.value)
+        "
+      >
+        Sign In
+      </button>
+
+      <div *ngIf="successMessage" class="notification is-success">
+        {{ successMessage }}
+      </div>
+    </section>
   </div>
-</div>
+</main>
